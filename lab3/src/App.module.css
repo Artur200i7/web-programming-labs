@@ -1,0 +1,32 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+.sidebar {
+  padding: 10px;
+}
+
+.content {
+  padding: 10px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.stats {
+  font-size: 14px;
+  color: #555;
+}
