@@ -67,8 +67,8 @@ export default function App() {
   };
 
   // Фільтрація задач
-  const filteredTasks =
-    filter === "all" ? tasks : tasks.filter((t) => t.status === filter);
+ const filteredTasks =
+  filter === "all" ? tasks : tasks.filter((task) => task.status === filter);
 
   return (
     <div className={styles.app}>
