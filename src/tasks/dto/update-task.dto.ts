@@ -1,29 +1,20 @@
-import {
-  IsString,
-  IsNotEmpty,
-  IsIn,
-  IsOptional,
-  MaxLength,
-} from 'class-validator';
-import { TaskPriority, TaskStatus } from '../task.type';
+import { IsIn, IsOptional, IsString } from 'class-validator';
+import type { TaskPriority, TaskStatus } from '../task.type';
 
 export class UpdateTaskDto {
-  @IsOptional()
   @IsString()
-  @IsNotEmpty()
-  @MaxLength(100)
+  @IsOptional()
   title?: string;
 
-  @IsOptional()
   @IsString()
-  @MaxLength(500)
+  @IsOptional()
   description?: string;
 
-  @IsOptional()
   @IsIn(['low', 'medium', 'high'])
+  @IsOptional()
   priority?: TaskPriority;
 
-  @IsOptional()
   @IsIn(['todo', 'in_progress', 'done'])
+  @IsOptional()
   status?: TaskStatus;
 }

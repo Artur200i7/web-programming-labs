@@ -1,17 +1,5 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Patch,
-  Delete,
-  Param,
-  Query,
-  Body,
-  HttpCode,
-  NotFoundException,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { Task, TaskStatus } from './task.type';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 
@@ -20,39 +8,27 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Get()
-  findAll(): Task[] {
-    return this.tasksService.findAll();
-  }
-
-  @Get('search')
-  findByStatus(@Query('status') status: TaskStatus): Task[] {
-    return this.tasksService.findByStatus(status);
+  getAll() {
+    return this.tasksService.getAllTasks();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Task {
-    const task = this.tasksService.findOne(id);
-    if (!task) throw new NotFoundException(`Завдання #${id} не знайдено`);
-    return task;
+  getById(@Param('id') id: string) {
+    return this.tasksService.getTaskById(id);
   }
 
   @Post()
-  @HttpCode(201)
-  create(@Body() dto: CreateTaskDto): Task {
-    return this.tasksService.create(dto);
+  create(@Body() dto: CreateTaskDto) {
+    return this.tasksService.createTask(dto);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateTaskDto): Task {
-    const updated = this.tasksService.update(id, dto);
-    if (!updated) throw new NotFoundException(`Завдання #${id} не знайдено`);
-    return updated;
+  update(@Param('id') id: string, @Body() dto: UpdateTaskDto) {
+    return this.tasksService.updateTask(id, dto);
   }
 
   @Delete(':id')
-  @HttpCode(204)
-  remove(@Param('id') id: string): void {
-    const removed = this.tasksService.remove(id);
-    if (!removed) throw new NotFoundException(`Завдання #${id} не знайдено`);
+  delete(@Param('id') id: string) {
+    return this.tasksService.deleteTask(id);
   }
 }
