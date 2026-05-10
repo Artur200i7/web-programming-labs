@@ -1,0 +1,5 @@
+[33mcbe55fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfix/ts-dto-validation[m[33m, [m[1;32mmaster[m[33m)[m fix(ts): resolve decorator metadata and isolatedModules issues; update DTO validation
+[33m6af55ca[m Fix: DTO imports, strict TS errors, cleaned Task type
+[33m993f1e9[m Lab 7: Connect controller and service in TasksModule
+[33m644f833[m Lab 7: Implement TasksService with CRUD logic
+[33m6e577fb[m Lab 7: Add UpdateTaskDto with optional fields
