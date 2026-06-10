@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -14,3 +15,22 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=======
+# Лабораторна робота №1 — JavaScript практика
+
+**Варіант:** [25]
+
+## Структура проєкту
+
+- `src/task-1.js` — Деструктуризація та spread/rest
+- `src/task-2.js` — Методи масивів
+- `src/task-3.js` — Класи та наслідування
+- `src/task-4.js` — async/await та Promises
+- `src/task-5/` — ES6 модулі
+
+## Запуск
+
+1. Відкрийте проєкт у VS Code
+2. Запустіть `index.html` через Live Server (правий клік → Open with Live Server)
+3. Відкрийте консоль розробника (F12) для перегляду результатів
+>>>>>>> c7829054e94b7548e1c737a7b15a8b9f1a0b4a1c
