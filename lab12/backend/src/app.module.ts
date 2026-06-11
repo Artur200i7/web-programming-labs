@@ -16,7 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   database: process.env.DB_NAME || 'postgres',
   autoLoadEntities: true,
   synchronize: true,
-});
+})
 
 
     // Додай свої модулі сюди
