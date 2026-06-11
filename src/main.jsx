@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App.jsx";
 
 const client = new QueryClient();
+app.enableCors({
+  origin: "http://localhost:5173",
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={client}>
