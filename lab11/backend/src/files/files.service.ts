@@ -2,7 +2,14 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class FilesService {
-  private files = [];
+  private files: {
+  name: string;
+  originalName: string;
+  size: number;
+  mime: string;
+  url: string;
+}[] = [];
+
 
   saveFile(file: Express.Multer.File) {
     const meta = {
